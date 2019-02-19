@@ -22,13 +22,13 @@ namespace Calculator.ViewModels
 
         public CalculatorViewModel()
         {
-            this.calculation = new CalculationModel();
-            this.display = "0";
-            this.FirstOperand = string.Empty;
-            this.SecondOperand = string.Empty;
-            this.Operation = string.Empty;
-            this.lastOperation = string.Empty;
-            this.fullExpression = string.Empty;
+            calculation = new CalculationModel();
+            display = "0";
+            FirstOperand = string.Empty;
+            SecondOperand = string.Empty;
+            Operation = string.Empty;
+            lastOperation = string.Empty;
+            fullExpression = string.Empty;
         }
 
         public string FirstOperand
@@ -176,6 +176,7 @@ namespace Calculator.ViewModels
                     }
                     break;
                 default:
+                    FullExpression += button;
                     if (display=="0" || newDisplayRequired)
                         Display = button;
                     else
@@ -194,6 +195,7 @@ namespace Calculator.ViewModels
                 {
                     FirstOperand = display;
                     LastOperation = operation;
+                    FullExpression += operation;
                 }
                 else
                 {
